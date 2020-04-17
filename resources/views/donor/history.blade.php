@@ -2,6 +2,10 @@
 
 @section('content')
     <div class="container">
-        History
+        @if( empty($history['items']) )
+            <p>there no results</p>
+        @else
+            <p>you have results</p>
+        @endif
     </div>
 @endsection
