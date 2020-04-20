@@ -27,3 +27,7 @@ Route::prefix('admin')->group(function() {
 
 Route::get('/donate', 'DonorController@index')->name('donate');
 Route::get('/history', 'DonorController@history')->name('history');
+
+
+Route::get('/request', 'RequestController@index')->name('request');
+Route::post('/request', 'RequestController@store')->name('request.store');

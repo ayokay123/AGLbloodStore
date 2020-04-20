@@ -19,7 +19,7 @@
                     Receive
                 </div>
                 <div class="card-body">
-                    <a href="#" class="btn btn-primary">Go to receive</a>
+                    <a href="{{route('request')}}" class="btn btn-primary">Go to receive</a>
                 </div>
             </div>
         </div>

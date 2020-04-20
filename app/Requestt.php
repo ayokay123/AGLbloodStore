@@ -4,9 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Request extends Model
+class Requestt extends Model
 {
     protected $table = 'request';
+
+    protected $guarded = [];
 
     public function user()
     {
