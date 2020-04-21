@@ -19,11 +19,32 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::prefix('admin')->group(function() {
+Route::prefix('admin')->group(function() {	
     Route::get('/', 'AdminController@index')->name('admin.dashboard');
     Route::get('/login', 'Auth\AdminLoginController@showLoginForm')->name('admin.login');
     Route::post('/login', 'Auth\AdminLoginController@login')->name('admin.login.submit');
 });
+Route::prefix('user')->group(function() {
 
+<<<<<<< Updated upstream
 Route::get('/donate', 'DonorController@index')->name('donate');
 Route::get('/history', 'DonorController@history')->name('history');
+=======
+	Route::any('/login','auth\LoginController@login')->name('user.login');
+	Route::any('/home','auth\LoginController@auth')->name('user.login.submit');
+	
+	Route::get('/donate', 'DonorController@index')->name('donate');
+	Route::get('/history', 'DonorController@history')->name('history');
+
+
+	Route::get('/request', 'RequestController@index')->name('request');
+	Route::post('/request', 'RequestController@store')->name('request.store');
+
+
+
+Route::any('logout', [
+	   'as' => 'logout',
+	   'uses' => 'Auth\LoginController@logout'
+	]);
+});
+>>>>>>> Stashed changes
